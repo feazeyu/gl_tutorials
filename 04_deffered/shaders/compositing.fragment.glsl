@@ -15,14 +15,26 @@ in vec2 texCoords;
 
 out vec4 fragColor;
 
+vec2 fisheye(vec2 uv, float strength){
+	vec2 centered = uv * 2.0 - 1.0;
+	float radius = length(centered);
+	if(radius < 1.0){
+		float distortion = pow(radius, strength);
+		centered = normalize(centered) * distortion;
+	}
+	return (centered + 1.0)*0.5;
+}
+
 void main() {
-	vec3 position = texture(u_position, texCoords).xyz;
-	vec3 normal = texture(u_normal, texCoords).xyz;
-	vec3 diffuseColor = texture(u_diffuse, texCoords).xyz;
+	vec2 newCoords = fisheye(texCoords, 2);
+	vec3 position = texture(u_position, newCoords).xyz;
+	vec3 normal = texture(u_normal, newCoords).xyz;
+	vec3 diffuseColor = texture(u_diffuse, newCoords).xyz;
 
 	vec3 lightDir = normalize(u_lightPos - position);
 	float lamb = max(dot(lightDir, normal), 0.0);
 	fragColor = vec4(lamb * diffuseColor + ambientColor, 1.0);
+	//fragColor = vec4(texture(u_normal, newCoords).xyz, 1);
 
 	vec4 shadowCoords = (u_lightProjMat * u_lightMat * vec4(position, 1.0));
 	// shadowCoords are in light clipspace, but we get fragment relative 

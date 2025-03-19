@@ -13,11 +13,12 @@ in vec3 normal;
 out vec4 out_color;
 out vec3 out_normal;
 out vec3 out_position;
-
+//out vec3 out_depthvalue;
 
 void main() {
 	out_color = texture(u_diffuseTexture, texCoords);
 	out_normal = normalize(normal);
 	out_position = position.xyz/position.w;
+//	out_depthvalue = gl_FragCoord.z;
 }
 

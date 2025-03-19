@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/04_deffered.dir/main.cpp.o CMakeFiles/04_deffered.dir/__/glad/src/glad.c.o -o 04_deffered  ../libutils.a /usr/local/lib/libglfw3.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so 

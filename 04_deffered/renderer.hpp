@@ -32,6 +32,7 @@ inline std::vector<CADescription> getColorNormalPositionAttachments() {
 		// To store values outside the range [0,1] we need different internal format then normal GL_RGBA
 		{ GL_RGBA, GL_FLOAT, GL_RGBA32F },
 		{ GL_RGBA, GL_FLOAT, GL_RGBA32F },
+	//	{ GL_RGBA, GL_FLOAT, GL_RGBA32F },
 	};
 }
 
@@ -67,6 +68,7 @@ public:
 			{ "u_diffuse", TextureInfo("diffuse", mFramebuffer->getColorAttachment(0)) },
 			{ "u_normal", TextureInfo("diffuse", mFramebuffer->getColorAttachment(1)) },
 			{ "u_position", TextureInfo("diffuse", mFramebuffer->getColorAttachment(2)) },
+		//	{ "u_depthmap", TextureInfo("diffuse", mFramebuffer->getColorAttachment(3)) },
 			// { "u_shadowMap", TextureInfo("shadowMap", mShadowmapFramebuffer->getDepthMap()) },
 			{ "u_shadowMap", TextureInfo("shadowMap", mShadowmapFramebuffer->getColorAttachment(0)) },
 		};
