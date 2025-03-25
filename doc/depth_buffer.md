@@ -10,12 +10,12 @@ This document explains how depth is stored in the depth buffer, why it is **non-
 
 When rendering a scene using **perspective projection**, the depth value stored in the depth buffer is based on the **clip space Z value**, which is transformed through the perspective divide:
 
-\[ z_{clip} = \frac{A \cdot z_{eye} + B}{z_{eye}} \]
+$$ z_{clip} = \frac{A \cdot z_{eye} + B}{z_{eye}} $$
 
 Where:
-- \( z_{clip} \) is the depth value stored in the depth buffer (\( gl_FragCoord.z \)).
-- \( z_{eye} \) is the actual depth in eye space (distance from the camera).
-- \( A \) and \( B \) are constants derived from the near and far clipping planes.
+- $z_{clip}$ is the depth value stored in the depth buffer (`gl_FragCoord.z`).
+- $z_{eye}$ is the actual depth in eye space (distance from the camera).
+- $A$ and $B$ are constants derived from the near and far clipping planes.
 
 This transformation causes depth values to be **highly compressed near the camera** and **less precise further away**, leading to depth precision issues (z-fighting).
 
@@ -23,7 +23,7 @@ This transformation causes depth values to be **highly compressed near the camer
 
 Since depth values stored in the depth buffer are non-linear, they need to be **linearized** when used for shading effects, such as fog or screen-space ambient occlusion (SSAO). The correct formula to linearize depth is:
 
-\[ z_{linear} = \frac{2.0 \cdot near \cdot far}{far + near - z_{clip} \cdot (far - near)} \]
+$$ z_{linear} = \frac{2.0 \cdot near \cdot far}{far + near - z_{clip} \cdot (far - near)} $$
 
 This transformation maps the stored depth value back to a linear range where:
 - **Objects at the near plane (closest to the camera) have values close to 0.**
