@@ -1,0 +1,4 @@
+/home/march/School/gl_tutorials/01_triangle/build/CMakeFiles/01_triangle_vanilla.dir
+/home/march/School/gl_tutorials/01_triangle/build/CMakeFiles/01_triangle.dir
+/home/march/School/gl_tutorials/01_triangle/build/CMakeFiles/edit_cache.dir
+/home/march/School/gl_tutorials/01_triangle/build/CMakeFiles/rebuild_cache.dir

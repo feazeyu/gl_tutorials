@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/01_triangle.dir/main.cpp.o CMakeFiles/01_triangle.dir/home/march/School/gl_tutorials/glad/src/glad.c.o -o 01_triangle  -lglm::glm -lglfw -lOpenGL::GL 

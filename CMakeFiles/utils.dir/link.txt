@@ -1,0 +1,2 @@
+/usr/bin/ar qc libutils.a CMakeFiles/utils.dir/utils/ogl_material_factory.cpp.o CMakeFiles/utils.dir/utils/ogl_geometry_factory.cpp.o CMakeFiles/utils.dir/utils/ogl_geometry_construction.cpp.o CMakeFiles/utils.dir/utils/obj_file_loading.cpp.o
+/usr/bin/ranlib libutils.a

@@ -1,0 +1,16 @@
+/home/march/School/gl_tutorials/CMakeFiles/utils.dir
+/home/march/School/gl_tutorials/CMakeFiles/edit_cache.dir
+/home/march/School/gl_tutorials/CMakeFiles/rebuild_cache.dir
+/home/march/School/gl_tutorials/01_triangle/CMakeFiles/01_triangle_vanilla.dir
+/home/march/School/gl_tutorials/01_triangle/CMakeFiles/01_triangle.dir
+/home/march/School/gl_tutorials/01_triangle/CMakeFiles/edit_cache.dir
+/home/march/School/gl_tutorials/01_triangle/CMakeFiles/rebuild_cache.dir
+/home/march/School/gl_tutorials/02_simple3d/CMakeFiles/02_simple3d.dir
+/home/march/School/gl_tutorials/02_simple3d/CMakeFiles/edit_cache.dir
+/home/march/School/gl_tutorials/02_simple3d/CMakeFiles/rebuild_cache.dir
+/home/march/School/gl_tutorials/03_textures/CMakeFiles/03_textures.dir
+/home/march/School/gl_tutorials/03_textures/CMakeFiles/edit_cache.dir
+/home/march/School/gl_tutorials/03_textures/CMakeFiles/rebuild_cache.dir
+/home/march/School/gl_tutorials/04_deffered/CMakeFiles/04_deffered.dir
+/home/march/School/gl_tutorials/04_deffered/CMakeFiles/edit_cache.dir
+/home/march/School/gl_tutorials/04_deffered/CMakeFiles/rebuild_cache.dir
