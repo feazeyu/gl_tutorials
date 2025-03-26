@@ -36,8 +36,8 @@ inline SimpleScene createCubeScene(MaterialFactory &aMaterialFactory, GeometryFa
 				"material",
 				RenderStyle::Solid,
 				{
-					{ "configuration", static_cast<unsigned int>(DIFFUSE) },
-					// { "configuration", static_cast<unsigned int>(DEBUG) },
+					//{ "configuration", static_cast<unsigned int>(DIFFUSE) },
+					{ "configuration", static_cast<unsigned int>(DEBUG) },
 					{ "u_diffuseTexture", TextureInfo("brick_wall/Brick_Wall_012_COLOR.jpg") },
 					{ "u_specularTexture", TextureInfo("brick_wall/Brick_Wall_012_ROUGH.jpg") },
 					{ "u_normalTexture", TextureInfo("brick_wall/Brick_Wall_012_NORM.jpg") },
@@ -91,19 +91,25 @@ inline SimpleScene createCubeScene(MaterialFactory &aMaterialFactory, GeometryFa
 	return scene;
 }
 
-inline SimpleScene createInstancedCubesScene(MaterialFactory &aMaterialFactory, GeometryFactory &aGeometryFactory) {
-	SimpleScene scene;
+inline std::vector<VertexColor> calculateAttributes(){
 	std::vector<VertexColor> instanceAttributes;
-	for (float x = -6.0f; x <= 6.0f; x += 1.5f) {
-		for (float y = -6.0f; y <= 6.0f; y += 1.5f) {
-			for (float z = -6.0f; z <= 6.0f; z += 1.5f) {
+	for (float x = -24.0f; x <= 24.0f; x += 1.0f) {
+		//for (float y = -6.0f; y <= 6.0f; y += 1.5f) {
+			for (float z = -24.0f; z <= 24.0f; z += 1.0f) {
+				float y = 0;
 				float red = (((instanceAttributes.size() + 31415) * 325) % 255) / 255.0f;
 				float green = (((instanceAttributes.size() + 81812) * 17) % 255) / 255.0f;
 				float blue = (((instanceAttributes.size() + 563) * 999) % 255) / 255.0f;
 				instanceAttributes.emplace_back(glm::vec3(x, y, z), glm::vec3(red, green, blue));
 			}
-		}
+		//}
 	}
+	return instanceAttributes;
+}
+
+inline SimpleScene createInstancedCubesScene(MaterialFactory &aMaterialFactory, GeometryFactory &aGeometryFactory) {
+	SimpleScene scene;
+	auto instanceAttributes = calculateAttributes();
 	auto instancedCube = std::make_shared<InstancedCube>(std::move(instanceAttributes));
 	instancedCube->setScale(glm::vec3(0.1, 0.1, 0.1));
 	instancedCube->addMaterial(

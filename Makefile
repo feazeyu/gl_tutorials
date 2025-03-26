@@ -194,6 +194,19 @@ utils/fast:
 	$(MAKE) $(MAKESILENT) -f 04_deffered/CMakeFiles/04_deffered.dir/build.make 04_deffered/CMakeFiles/04_deffered.dir/build
 .PHONY : 04_deffered/fast
 
+#=============================================================================
+# Target rules for targets named 05_shaders
+
+# Build rule for target.
+05_shaders: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 05_shaders
+.PHONY : 05_shaders
+
+# fast build rule for target.
+05_shaders/fast:
+	$(MAKE) $(MAKESILENT) -f 05_shaders/CMakeFiles/05_shaders.dir/build.make 05_shaders/CMakeFiles/05_shaders.dir/build
+.PHONY : 05_shaders/fast
+
 utils/obj_file_loading.o: utils/obj_file_loading.cpp.o
 .PHONY : utils/obj_file_loading.o
 
@@ -303,6 +316,7 @@ help:
 	@echo "... 02_simple3d"
 	@echo "... 03_textures"
 	@echo "... 04_deffered"
+	@echo "... 05_shaders"
 	@echo "... utils"
 	@echo "... utils/obj_file_loading.o"
 	@echo "... utils/obj_file_loading.i"

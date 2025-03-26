@@ -11,6 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "02_simple3d/CMakeLists.txt"
   "03_textures/CMakeLists.txt"
   "04_deffered/CMakeLists.txt"
+  "05_shaders/CMakeLists.txt"
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
@@ -63,6 +64,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "02_simple3d/CMakeFiles/CMakeDirectoryInformation.cmake"
   "03_textures/CMakeFiles/CMakeDirectoryInformation.cmake"
   "04_deffered/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "05_shaders/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -73,4 +75,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "02_simple3d/CMakeFiles/02_simple3d.dir/DependInfo.cmake"
   "03_textures/CMakeFiles/03_textures.dir/DependInfo.cmake"
   "04_deffered/CMakeFiles/04_deffered.dir/DependInfo.cmake"
+  "05_shaders/CMakeFiles/05_shaders.dir/DependInfo.cmake"
   )

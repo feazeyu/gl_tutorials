@@ -102,6 +102,7 @@ int main() {
 
 		renderer.initialize();
 		window.runLoop([&] {
+			glVertexAttrib1f(5, window.elapsedTime());
 			renderer.clear();
 			if (config.showSolid) {
 				GL_CHECK(glDisable(GL_POLYGON_OFFSET_LINE));

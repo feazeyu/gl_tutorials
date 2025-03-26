@@ -14,3 +14,6 @@
 /home/march/School/gl_tutorials/04_deffered/CMakeFiles/04_deffered.dir
 /home/march/School/gl_tutorials/04_deffered/CMakeFiles/edit_cache.dir
 /home/march/School/gl_tutorials/04_deffered/CMakeFiles/rebuild_cache.dir
+/home/march/School/gl_tutorials/05_shaders/CMakeFiles/05_shaders.dir
+/home/march/School/gl_tutorials/05_shaders/CMakeFiles/edit_cache.dir
+/home/march/School/gl_tutorials/05_shaders/CMakeFiles/rebuild_cache.dir

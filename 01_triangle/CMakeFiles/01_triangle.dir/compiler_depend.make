@@ -77,7 +77,7 @@
   utils/ogl_resource.hpp \
   utils/shader.hpp \
   utils/window.hpp \
-  01_triangle/simpleTriangle.hpp \
+  01_triangle/fractal.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -907,8 +907,6 @@ glad/src/glad.c:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-01_triangle/simpleTriangle.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
@@ -1090,6 +1088,8 @@ utils/ogl_resource.hpp:
 /usr/include/c++/13/bits/allocated_ptr.h:
 
 /usr/include/c++/13/clocale:
+
+01_triangle/fractal.hpp:
 
 utils/error_handling.hpp:
 
