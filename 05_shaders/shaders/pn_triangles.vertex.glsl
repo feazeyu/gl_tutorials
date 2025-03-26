@@ -1,4 +1,4 @@
-#version 400 compatibility
+#version 430 core
 in vec3 in_vert;
 in vec3 in_normal;
 in vec2 in_texCoord;
