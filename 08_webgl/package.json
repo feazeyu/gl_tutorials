@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A simple local server for serving static HTML files",
   "scripts": {
-    "start": "http-server . -p 9000 --cors"
+    "start": "http-server . -p 8000 --cors"
   },
   "keywords": [
     "web",
@@ -17,4 +17,3 @@
     "http-server": "14.1.1"
   }
 }
-
