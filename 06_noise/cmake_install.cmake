@@ -1,4 +1,4 @@
-# Install script for directory: /home/march/School/gl_tutorials
+# Install script for directory: /home/march/School/gl_tutorials/06_noise
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -42,24 +42,3 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/home/march/School/gl_tutorials/01_triangle/cmake_install.cmake")
-  include("/home/march/School/gl_tutorials/02_simple3d/cmake_install.cmake")
-  include("/home/march/School/gl_tutorials/03_textures/cmake_install.cmake")
-  include("/home/march/School/gl_tutorials/04_deffered/cmake_install.cmake")
-  include("/home/march/School/gl_tutorials/05_shaders/cmake_install.cmake")
-  include("/home/march/School/gl_tutorials/06_noise/cmake_install.cmake")
-
-endif()
-
-if(CMAKE_INSTALL_COMPONENT)
-  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
-else()
-  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
-endif()
-
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/march/School/gl_tutorials/${CMAKE_INSTALL_MANIFEST}"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")

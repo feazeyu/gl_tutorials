@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/06_noise.dir/main.cpp.o CMakeFiles/06_noise.dir/__/glad/src/glad.c.o -o 06_noise  ../libutils.a /usr/local/lib/libglfw3.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so 

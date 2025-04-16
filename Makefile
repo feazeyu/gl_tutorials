@@ -207,6 +207,19 @@ utils/fast:
 	$(MAKE) $(MAKESILENT) -f 05_shaders/CMakeFiles/05_shaders.dir/build.make 05_shaders/CMakeFiles/05_shaders.dir/build
 .PHONY : 05_shaders/fast
 
+#=============================================================================
+# Target rules for targets named 06_noise
+
+# Build rule for target.
+06_noise: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 06_noise
+.PHONY : 06_noise
+
+# fast build rule for target.
+06_noise/fast:
+	$(MAKE) $(MAKESILENT) -f 06_noise/CMakeFiles/06_noise.dir/build.make 06_noise/CMakeFiles/06_noise.dir/build
+.PHONY : 06_noise/fast
+
 utils/obj_file_loading.o: utils/obj_file_loading.cpp.o
 .PHONY : utils/obj_file_loading.o
 
@@ -317,6 +330,7 @@ help:
 	@echo "... 03_textures"
 	@echo "... 04_deffered"
 	@echo "... 05_shaders"
+	@echo "... 06_noise"
 	@echo "... utils"
 	@echo "... utils/obj_file_loading.o"
 	@echo "... utils/obj_file_loading.i"

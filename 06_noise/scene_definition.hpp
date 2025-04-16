@@ -171,11 +171,11 @@ inline SimpleScene createMonkeyScene(MaterialFactory &aMaterialFactory, Geometry
 inline SimpleScene createTerrainScene(MaterialFactory &aMaterialFactory, GeometryFactory &aGeometryFactory) {
 	SimpleScene scene;
 	{
-		auto plane = std::make_shared<Plane>();
-		// auto plane = std::make_shared<LoadedMeshObject>("./data/geometry/plane.obj");
+		//auto plane = std::make_shared<Plane>();
+		auto plane = std::make_shared<LoadedMeshObject>("./data/geometry/plane.obj");
 
 		plane->setName("Plane");
-		plane->setRotation(glm::vec3(glm::radians(70.0f), 0.0f, 0.0f));
+		//plane->setRotation(glm::vec3(glm::radians(70.0f), 0.0f, 0.0f));
 		plane->setScale(glm::vec3(2.0f));
 		plane->addMaterial(
 			"solid",
@@ -183,8 +183,8 @@ inline SimpleScene createTerrainScene(MaterialFactory &aMaterialFactory, Geometr
 				"terrain",
 				RenderStyle::Solid,
 				{
-					{"u_inner", 32},
-					{"u_outer", 32},
+					{"u_inner", 64},
+					{"u_outer", 64},
 					{"u_selectedNoise", 1},
 					{"u_maxDisplacement", 0.3f},
 					{"u_noiseScale", 2.0f},
@@ -197,8 +197,8 @@ inline SimpleScene createTerrainScene(MaterialFactory &aMaterialFactory, Geometr
 				"terrain_solid_color",
 				RenderStyle::Wireframe,
 				{
-					{"u_inner", 32},
-					{"u_outer", 32},
+					{"u_inner", 64},
+					{"u_outer", 64},
 					{"u_selectedNoise", 1},
 					{"u_maxDisplacement", 0.3f},
 					{"u_noiseScale", 2.0f},

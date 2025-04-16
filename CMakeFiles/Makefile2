@@ -69,6 +69,7 @@ all: 02_simple3d/all
 all: 03_textures/all
 all: 04_deffered/all
 all: 05_shaders/all
+all: 06_noise/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -77,6 +78,7 @@ preinstall: 02_simple3d/preinstall
 preinstall: 03_textures/preinstall
 preinstall: 04_deffered/preinstall
 preinstall: 05_shaders/preinstall
+preinstall: 06_noise/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -86,6 +88,7 @@ clean: 02_simple3d/clean
 clean: 03_textures/clean
 clean: 04_deffered/clean
 clean: 05_shaders/clean
+clean: 06_noise/clean
 .PHONY : clean
 
 #=============================================================================
@@ -166,13 +169,28 @@ clean: 05_shaders/clean
 .PHONY : 05_shaders/clean
 
 #=============================================================================
+# Directory level rules for directory 06_noise
+
+# Recursive "all" directory target.
+06_noise/all: 06_noise/CMakeFiles/06_noise.dir/all
+.PHONY : 06_noise/all
+
+# Recursive "preinstall" directory target.
+06_noise/preinstall:
+.PHONY : 06_noise/preinstall
+
+# Recursive "clean" directory target.
+06_noise/clean: 06_noise/CMakeFiles/06_noise.dir/clean
+.PHONY : 06_noise/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/utils.dir
 
 # All Build rule for target.
 CMakeFiles/utils.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/march/School/gl_tutorials/CMakeFiles --progress-num=19,20,21,22,23 "Built target utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/march/School/gl_tutorials/CMakeFiles --progress-num=22,23,24,25,26 "Built target utils"
 .PHONY : CMakeFiles/utils.dir/all
 
 # Build rule for subdir invocation for target.
@@ -346,6 +364,32 @@ CMakeFiles/utils.dir/clean:
 05_shaders/CMakeFiles/05_shaders.dir/clean:
 	$(MAKE) $(MAKESILENT) -f 05_shaders/CMakeFiles/05_shaders.dir/build.make 05_shaders/CMakeFiles/05_shaders.dir/clean
 .PHONY : 05_shaders/CMakeFiles/05_shaders.dir/clean
+
+#=============================================================================
+# Target rules for target 06_noise/CMakeFiles/06_noise.dir
+
+# All Build rule for target.
+06_noise/CMakeFiles/06_noise.dir/all: CMakeFiles/utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 06_noise/CMakeFiles/06_noise.dir/build.make 06_noise/CMakeFiles/06_noise.dir/depend
+	$(MAKE) $(MAKESILENT) -f 06_noise/CMakeFiles/06_noise.dir/build.make 06_noise/CMakeFiles/06_noise.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/march/School/gl_tutorials/CMakeFiles --progress-num=19,20,21 "Built target 06_noise"
+.PHONY : 06_noise/CMakeFiles/06_noise.dir/all
+
+# Build rule for subdir invocation for target.
+06_noise/CMakeFiles/06_noise.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/march/School/gl_tutorials/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 06_noise/CMakeFiles/06_noise.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/march/School/gl_tutorials/CMakeFiles 0
+.PHONY : 06_noise/CMakeFiles/06_noise.dir/rule
+
+# Convenience name for target.
+06_noise: 06_noise/CMakeFiles/06_noise.dir/rule
+.PHONY : 06_noise
+
+# clean rule for target.
+06_noise/CMakeFiles/06_noise.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 06_noise/CMakeFiles/06_noise.dir/build.make 06_noise/CMakeFiles/06_noise.dir/clean
+.PHONY : 06_noise/CMakeFiles/06_noise.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

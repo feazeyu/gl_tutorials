@@ -17,3 +17,6 @@
 /home/march/School/gl_tutorials/05_shaders/CMakeFiles/05_shaders.dir
 /home/march/School/gl_tutorials/05_shaders/CMakeFiles/edit_cache.dir
 /home/march/School/gl_tutorials/05_shaders/CMakeFiles/rebuild_cache.dir
+/home/march/School/gl_tutorials/06_noise/CMakeFiles/06_noise.dir
+/home/march/School/gl_tutorials/06_noise/CMakeFiles/edit_cache.dir
+/home/march/School/gl_tutorials/06_noise/CMakeFiles/rebuild_cache.dir

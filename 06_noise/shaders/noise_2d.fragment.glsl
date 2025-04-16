@@ -14,7 +14,7 @@ uniform int u_selectedNoise = 0;
 
 float noise_2d(vec2 coords) {
 	if (u_selectedNoise == 0) {
-		return cnoise_2d(coords);
+		return 0.5*cnoise_2d(coords+vec2(10,50))+0.5*cnoise_2d(coords*2);
 	}
 	if (u_selectedNoise == 1) {
 		return snoise_2d(coords);

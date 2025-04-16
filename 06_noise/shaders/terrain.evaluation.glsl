@@ -46,9 +46,18 @@ void main() {
                 gl_TessCoord.y * tes_in[1].texCoords +
                 gl_TessCoord.z * tes_in[2].texCoords;
 
-    float noise = noise_2d(u_noiseScale*f_texCoord);
+    float rawNoise = 0.85 * snoise_2d(u_noiseScale * f_texCoord) + 0.11 * noise_2d(4.0 * u_noiseScale * (f_texCoord+vec2(10,36))) + 0.04* cnoise_2d(25 * u_noiseScale * (f_texCoord + vec2(21,49)));  
+    float noise = rawNoise;
+    if (noise > 0) {
+        noise = mix(noise, pow(noise * 1.5, 2.0), smoothstep(0.0, 0.5, noise));
+    }
+    if (noise < -0.4){
+        noise = mix(-0.4,-0.3,noise);
+    }
+    //Compose noise here
+    //Modulate noise so peaks are high and shallow valleys
+    //Do not generate underwater terrain, just a flat sea.
     position += noise * normal * u_maxDisplacement;
-
     f_position = vec3(u_modelMat * vec4(position, 1.0));
 
     gl_Position = u_projMat * u_viewMat * u_modelMat * vec4(position, 1.0);
