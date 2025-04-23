@@ -220,6 +220,19 @@ utils/fast:
 	$(MAKE) $(MAKESILENT) -f 06_noise/CMakeFiles/06_noise.dir/build.make 06_noise/CMakeFiles/06_noise.dir/build
 .PHONY : 06_noise/fast
 
+#=============================================================================
+# Target rules for targets named 07_3d_textures
+
+# Build rule for target.
+07_3d_textures: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 07_3d_textures
+.PHONY : 07_3d_textures
+
+# fast build rule for target.
+07_3d_textures/fast:
+	$(MAKE) $(MAKESILENT) -f 07_3d_textures/CMakeFiles/07_3d_textures.dir/build.make 07_3d_textures/CMakeFiles/07_3d_textures.dir/build
+.PHONY : 07_3d_textures/fast
+
 utils/obj_file_loading.o: utils/obj_file_loading.cpp.o
 .PHONY : utils/obj_file_loading.o
 
@@ -331,6 +344,7 @@ help:
 	@echo "... 04_deffered"
 	@echo "... 05_shaders"
 	@echo "... 06_noise"
+	@echo "... 07_3d_textures"
 	@echo "... utils"
 	@echo "... utils/obj_file_loading.o"
 	@echo "... utils/obj_file_loading.i"

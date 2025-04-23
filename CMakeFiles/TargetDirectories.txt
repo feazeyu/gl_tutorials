@@ -20,3 +20,6 @@
 /home/march/School/gl_tutorials/06_noise/CMakeFiles/06_noise.dir
 /home/march/School/gl_tutorials/06_noise/CMakeFiles/edit_cache.dir
 /home/march/School/gl_tutorials/06_noise/CMakeFiles/rebuild_cache.dir
+/home/march/School/gl_tutorials/07_3d_textures/CMakeFiles/07_3d_textures.dir
+/home/march/School/gl_tutorials/07_3d_textures/CMakeFiles/edit_cache.dir
+/home/march/School/gl_tutorials/07_3d_textures/CMakeFiles/rebuild_cache.dir

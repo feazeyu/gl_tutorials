@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "04_deffered/CMakeLists.txt"
   "05_shaders/CMakeLists.txt"
   "06_noise/CMakeLists.txt"
+  "07_3d_textures/CMakeLists.txt"
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
@@ -67,6 +68,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "04_deffered/CMakeFiles/CMakeDirectoryInformation.cmake"
   "05_shaders/CMakeFiles/CMakeDirectoryInformation.cmake"
   "06_noise/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "07_3d_textures/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -79,4 +81,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "04_deffered/CMakeFiles/04_deffered.dir/DependInfo.cmake"
   "05_shaders/CMakeFiles/05_shaders.dir/DependInfo.cmake"
   "06_noise/CMakeFiles/06_noise.dir/DependInfo.cmake"
+  "07_3d_textures/CMakeFiles/07_3d_textures.dir/DependInfo.cmake"
   )

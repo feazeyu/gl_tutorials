@@ -142,12 +142,30 @@ function renderEnemies(gl, program, view, proj) {
 
   gl.bindVertexArray(enemyVAO);
   for (const pos of enemyPositions) {
-    const model = mat4.create();
-    mat4.translate(model, model, pos);
-    mat3.fromMat4(normalMat, model);
-    mat3.invert(normalMat, normalMat);
-    mat3.transpose(normalMat, normalMat);
-    gl.uniformMatrix4fv(uModel, false, model);
+	const model = mat4.create();
+	mat4.translate(model, model, pos);
+	
+	const direction = vec3.create();
+	vec3.subtract(direction, camera.pos, pos);
+	
+	const up = vec3.fromValues(0, 1, 0);
+	const rotVec = vec3.create();
+	vec3.cross(rotVec, up, direction);
+	vec3.normalize(rotVec, rotVec);
+
+	const rotation = mat4.fromValues(
+		rotVec[0], rotVec[1], rotVec[2], 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1
+	);
+
+	mat4.multiply(model, model, rotation);
+
+	mat3.fromMat4(normalMat, model);
+	mat3.invert(normalMat, normalMat);
+	mat3.transpose(normalMat, normalMat);
+	gl.uniformMatrix4fv(uModel, false, model);
     gl.uniformMatrix3fv(uNormal, false, normalMat);
     gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
   }
