@@ -1,5 +1,9 @@
 #version 430 core
 
+// Naive scan implementation.
+// It uses only global memory and work group synchronization,
+// Must be executed only in one workgroup - no global synchronization
+
 layout(local_size_x = 256) in;
 
 layout(std430, binding = 0) buffer Input {
