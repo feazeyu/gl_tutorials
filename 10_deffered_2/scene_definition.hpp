@@ -57,16 +57,7 @@ inline SimpleScene createIslandScene(MaterialFactory& aMaterialFactory, Geometry
 			);
 	{
 		auto island = std::make_shared<LoadedMeshObject>("./data/geometry/island/island.obj");
-		island->addMaterial(
-			"solid",
-			MaterialParameters(
-				"material_deffered",
-				RenderStyle::Solid,
-				{
-					{ "u_diffuseTexture", TextureInfo("island/pallete.png") },
-				}
-				)
-		);
+		island->addMaterial("solid", palleteMaterial);
 		island->prepareRenderData(aMaterialFactory, aGeometryFactory);
 		scene.addObject(island);
 	}

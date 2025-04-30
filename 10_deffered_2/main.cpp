@@ -67,7 +67,6 @@ int main() {
 				camera.yawGlobal(-cMouseSensitivity * glm::radians(mouseTracking.offset()[0]));
 				camera.pitch(-cMouseSensitivity * glm::radians(mouseTracking.offset()[1]));
 				window.setCursorToCenter();
-				camera.printInfo(std::cout);
 				if (glfwGetKey(aWin, GLFW_KEY_W) == GLFW_PRESS) {
 					camera.move(-cMovementSpeed * camera.getForwardVector());
 				}
