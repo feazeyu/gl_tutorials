@@ -30,10 +30,7 @@ void main() {
 	vec3 position = imageLoad(u_position, gid).xyz;
 	float shadow = imageLoad(u_shadows, gid).x;
 
-	if (shadow < 0.5) {
-		color*=0.5;
-		color.a =1.0;
-	}
+	color = vec4(color.rgb * min(1.0, shadow +0.2), color.a);
 
 	// Write the result to the output image
 	imageStore(outputImage, gid, color);

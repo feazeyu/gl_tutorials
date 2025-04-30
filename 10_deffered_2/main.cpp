@@ -49,7 +49,7 @@ int main() {
 		Config config;
 		Camera camera(window.aspectRatio(), 45.0f, 0.5f, 1000.0f);
 		camera.setPosition(glm::vec3(0.0f, 50.0f, 500.0f));
-		// camera.lookAt(glm::vec3());
+		camera.lookAt(glm::vec3(-100, 0, 520));
 		SpotLight light(90, 100.0f, 2000.0f);
 		light.setPosition(glm::vec3(600.0f, 950.0f, 700.0f));
 		light.lookAt(glm::vec3());
@@ -67,7 +67,7 @@ int main() {
 				camera.yawGlobal(-cMouseSensitivity * glm::radians(mouseTracking.offset()[0]));
 				camera.pitch(-cMouseSensitivity * glm::radians(mouseTracking.offset()[1]));
 				window.setCursorToCenter();
-
+				camera.printInfo(std::cout);
 				if (glfwGetKey(aWin, GLFW_KEY_W) == GLFW_PRESS) {
 					camera.move(-cMovementSpeed * camera.getForwardVector());
 				}
@@ -86,8 +86,8 @@ int main() {
 				if (action == GLFW_PRESS) {
 					switch (key) {
 					case GLFW_KEY_ENTER:
-						camera.setPosition(glm::vec3(0.0f, -10.0f, -50.0f));
-						camera.lookAt(glm::vec3());
+						camera.setPosition(glm::vec3(0.0f, 50.0f, 500.0f));
+						camera.lookAt(glm::vec3(-100, 0, 520));
 						break;
 					}
 				}
