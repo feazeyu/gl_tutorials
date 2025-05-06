@@ -23,7 +23,6 @@ __kernel void game_of_life(__global uchar* current, __global uchar* next, int wi
 __kernel void scale_to_255(__global const uchar* input, __global uchar* output, int size) {
 	int index = get_global_id(0);
 	if (index < size) {
-		// output[index] = input[index] * 255;
-		output[index] = 255;
+		output[index] = input[index] * 255;
 	}
 }
