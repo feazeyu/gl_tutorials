@@ -1,5 +1,5 @@
 #include <CL/cl.hpp>
-#include <CL/opencl.hpp>
+//#include <CL/opencl.hpp>
 #include <vector>
 #include <iostream>
 #include <algorithm>
@@ -26,7 +26,7 @@ int main() {
 			std::cout << "No OpenCL platforms found." << std::endl;
 			return 1;
 		}
-
+		printAvailablePlatformsAndDevices(platforms);
 
 		// Initialize OpenCL context, device, and command queue
 		cl::Platform platform = cl::Platform::getDefault();
@@ -67,22 +67,12 @@ int main() {
 		scaleKernel.setArg(1, outputBuffer);
 		scaleKernel.setArg(2, static_cast<int>(buffer.size()));
 
+		// Get the initial state
 		queue.enqueueWriteBuffer(nextBuffer, CL_TRUE, 0, buffer.size() * sizeof(cl_uchar), buffer.data());
-		queue.finish();
-		// Scale buffer values for black and white output
-		cl_int err = queue.enqueueNDRangeKernel(scaleKernel, cl::NullRange, cl::NDRange(buffer.size()), cl::NullRange);
-		queue.finish();
-		if (err != CL_SUCCESS) {
-			std::cerr << "Kernel launch failed with error code: " << err << std::endl;
-		}
-		// Read result
+		queue.enqueueNDRangeKernel(scaleKernel, cl::NullRange, cl::NDRange(buffer.size()), cl::NullRange);
 		queue.enqueueReadBuffer(outputBuffer, CL_TRUE, 0, buffer.size() * sizeof(cl_uchar), buffer.data());
-		queue.finish();
-
-		// Save to PNG
 		save_png("conway_out", buffer, width, height, 1, 0);
 
-		return 1;
 		for (int i = 0; i < iterations; ++i) {
 			std::cout << "Creating generation " << i << " ...\n";
 			// Execute kernel

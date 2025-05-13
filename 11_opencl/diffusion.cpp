@@ -1,5 +1,5 @@
-// #include <CL/cl.hpp>
-#include <CL/opencl.hpp>
+#include <CL/cl.hpp>
+//#include <CL/opencl.hpp>
 #include <vector>
 #include <iostream>
 #include <random>
@@ -16,6 +16,14 @@ const float delta = 0.2f;  // Diffusion strength
 
 int main() {
 	try {
+		std::vector<cl::Platform> platforms;
+		cl::Platform::get(&platforms);
+		if (platforms.empty()) {
+			std::cout << "No OpenCL platforms found." << std::endl;
+			return 1;
+		}
+		printAvailablePlatformsAndDevices(platforms);
+
 		// Initialize OpenCL context, device, and command queue
 		cl::Platform platform = cl::Platform::getDefault();
 		cl::Device device = cl::Device::getDefault();
@@ -37,9 +45,6 @@ int main() {
 
 
 		// Create OpenCL buffers
-		// cl::Buffer currentBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, buffer.size() * sizeof(cl_uchar), buffer.data());
-		// cl::Buffer nextBuffer(context, CL_MEM_READ_WRITE, buffer.size() * sizeof(cl_uchar));
-                //
 		cl::Buffer ucharBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, buffer.size() * sizeof(cl_uchar), buffer.data());
 		cl::Buffer floatBufferCurrent(context, CL_MEM_READ_WRITE, buffer.size() * sizeof(cl_float));
 		cl::Buffer floatBufferNext(context, CL_MEM_READ_WRITE, buffer.size() * sizeof(cl_float));
